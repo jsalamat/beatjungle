@@ -30,3 +30,14 @@ const context = {
     }
   ]
 };
+
+const templateElement = document.getElementById('templateHB');
+const templateSource = templateElement.innerHTML;
+// a template using the Handlebars.compile() method
+const template = Handlebars.compile(templateSource);
+// template will accept an object and
+// use the properties of the object to fill in a Handlebars template
+// Pass the provided context object into the template function as an argument
+const compiledHtml = template(context);
+// render the compiled HTML in the browser
+document.getElementById('information').innerHTML = compiledHtml;
